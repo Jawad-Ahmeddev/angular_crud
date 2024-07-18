@@ -9,7 +9,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -27,7 +27,12 @@ export class AppComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _dialog: MatDialog,private _empService: EmployeeService){}
+
+  
+  constructor(private _dialog: MatDialog,
+    private _empService: EmployeeService){}
+
+    
 
 
   ngOnInit(): void {
@@ -84,6 +89,24 @@ export class AppComponent implements OnInit{
       )
 
     }
+
+
+    openEditForm(data: any ){
+     const DialogRef= this._dialog.open(EmployeeEditComponent,{
+      data,
+     });
+
+     DialogRef.afterClosed().subscribe({
+      next: (val)=>{
+        if(val){
+          this.getEmployeeList();
+        }
+      }
+     })
+
+    }
+
+
 
   
 }

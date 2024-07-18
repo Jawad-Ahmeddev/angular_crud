@@ -17,3 +17,14 @@
         flex: 1;
     }
 }
+
+.error {
+    display: block;
+    opacity: 1;
+    border: 1px solid darkred;
+  background: salmon;
+  padding: 10px;
+  color: white;
+  margin-top: 100px;
+  
+}

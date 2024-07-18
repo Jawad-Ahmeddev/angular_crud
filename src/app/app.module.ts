@@ -16,11 +16,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import {  MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatError } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginator,
     MatSortModule, 
     HttpClientModule,
+    MatSnackBarModule,
+    MatError,
   ],
   providers: [
     provideClientHydration(),
